@@ -5,6 +5,7 @@ import '../../config/theme/app_theme.dart';
 import '../views/home/home_recintos_view.dart';
 import '../views/home_views.dart';
 import '../views/recintos/recintos_view.dart';
+import '../views/ruta/ruta_view.dart';
 import 'widgets/shared/custom_navigatior.dart' show CustomBottomNavigationbar;
 
 class HomeScreen extends StatelessWidget {
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   static final viewRoutes = <Widget>[
     const _HomeTabView(), // Vista combinada con tabs
     const RecintosView(),
-    const Placeholder(), // Tercera vista (puedes agregar otra aquí)
+    const RutaView(), // Tercera vista (puedes agregar otra aquí)
   ];
 
   @override

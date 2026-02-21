@@ -23,7 +23,7 @@ class RecintoAdapter extends TypeAdapter<Recinto> {
       descripcion: fields[3] as String?,
       fechaCreacion: fields[4] as DateTime,
       activo: fields[5] as bool,
-      orden: fields[6] as int? ?? 0,
+      orden: fields[6] as int,
     );
   }
 

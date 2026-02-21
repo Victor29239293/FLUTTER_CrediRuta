@@ -2,6 +2,7 @@ import 'package:cobrador_app/config/router/app_router.dart';
 import 'package:cobrador_app/infrastructure/local_storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 void main() async {
@@ -29,6 +30,13 @@ class MyApp extends StatelessWidget {
       title: 'Cobrador App',
       debugShowCheckedModeBanner: false,
       routerConfig: appRouter,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [Locale('es'), Locale('en')],
+      locale: const Locale('es'),
     );
   }
 }

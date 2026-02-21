@@ -23,13 +23,16 @@ class ClienteAdapter extends TypeAdapter<Cliente> {
       recintoId: fields[3] as String,
       fechaCreacion: fields[4] as DateTime,
       activo: fields[5] as bool,
+      latitud: fields[6] as double?,
+      longitud: fields[7] as double?,
+      direccion: fields[8] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Cliente obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(9)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -41,7 +44,13 @@ class ClienteAdapter extends TypeAdapter<Cliente> {
       ..writeByte(4)
       ..write(obj.fechaCreacion)
       ..writeByte(5)
-      ..write(obj.activo);
+      ..write(obj.activo)
+      ..writeByte(6)
+      ..write(obj.latitud)
+      ..writeByte(7)
+      ..write(obj.longitud)
+      ..writeByte(8)
+      ..write(obj.direccion);
   }
 
   @override

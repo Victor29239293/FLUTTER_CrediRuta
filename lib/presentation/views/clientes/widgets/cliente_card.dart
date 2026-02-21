@@ -195,10 +195,10 @@ class _ClienteInfo extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 6),
-        // Referencia o teléfono
-        if (cliente.referencia != null && cliente.referencia!.isNotEmpty)
-          Row(
-            children: [
+        // Referencia y GPS
+        Row(
+          children: [
+            if (cliente.referencia != null && cliente.referencia!.isNotEmpty)
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
@@ -220,17 +220,42 @@ class _ClienteInfo extends StatelessWidget {
                     ),
                   ],
                 ),
+              )
+            else
+              Text(
+                'Sin teléfono',
+                style: TextStyle(
+                  color: AppTheme.textMuted.withValues(alpha: 0.7),
+                  fontSize: 12,
+                ),
               ),
-            ],
-          )
-        else
-          Text(
-            'Sin teléfono registrado',
-            style: TextStyle(
-              color: AppTheme.textMuted.withValues(alpha: 0.7),
-              fontSize: 12,
-            ),
-          ),
+            const SizedBox(width: 8),
+            // Indicador de GPS
+            if (cliente.tieneUbicacion)
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                decoration: BoxDecoration(
+                  color: AppTheme.success.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.gps_fixed, size: 11, color: AppTheme.success),
+                    const SizedBox(width: 3),
+                    Text(
+                      'GPS',
+                      style: TextStyle(
+                        color: AppTheme.success,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+          ],
+        ),
       ],
     );
   }

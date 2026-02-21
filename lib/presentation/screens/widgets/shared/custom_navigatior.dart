@@ -33,8 +33,8 @@
             label: 'Recintos',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_outline),
-            label: 'Favorites',
+            icon: Icon(Icons.map_outlined),
+            label: 'Rutas',
           ),
         ],
       );

@@ -33,6 +33,18 @@ class Cliente extends HiveObject {
   @HiveField(5)
   final bool activo;
 
+  /// Latitud de la ubicación del cliente
+  @HiveField(6)
+  final double? latitud;
+
+  /// Longitud de la ubicación del cliente
+  @HiveField(7)
+  final double? longitud;
+
+  /// Dirección del cliente
+  @HiveField(8)
+  final String? direccion;
+
   Cliente({
     required this.id,
     required this.nombre,
@@ -40,7 +52,13 @@ class Cliente extends HiveObject {
     required this.recintoId,
     required this.fechaCreacion,
     this.activo = true,
+    this.latitud,
+    this.longitud,
+    this.direccion,
   });
+
+  /// Verifica si el cliente tiene ubicación configurada
+  bool get tieneUbicacion => latitud != null && longitud != null;
 
   /// Crea una copia del cliente con campos modificados
   Cliente copyWith({
@@ -50,6 +68,9 @@ class Cliente extends HiveObject {
     String? recintoId,
     DateTime? fechaCreacion,
     bool? activo,
+    double? latitud,
+    double? longitud,
+    String? direccion,
   }) {
     return Cliente(
       id: id ?? this.id,
@@ -58,6 +79,9 @@ class Cliente extends HiveObject {
       recintoId: recintoId ?? this.recintoId,
       fechaCreacion: fechaCreacion ?? this.fechaCreacion,
       activo: activo ?? this.activo,
+      latitud: latitud ?? this.latitud,
+      longitud: longitud ?? this.longitud,
+      direccion: direccion ?? this.direccion,
     );
   }
 
