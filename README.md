@@ -1,4 +1,8 @@
-# 💰 Cobrador App
+# Cobrador App
+
+> Aplicación móvil profesional para la gestión integral de cobros, diseñada para cobradores y empresas que necesitan administrar pagos de manera eficiente.
+
+---
 
 <p align="center">
   <img src="assets/images/Screenshot_1771635988.png" width="200" alt="Screenshot 1"/>
@@ -10,10 +14,6 @@
   <img src="assets/images/Screenshot_1771636037.png" width="200" alt="Screenshot 4"/>
   <img src="assets/images/Screenshot_1771636042.png" width="200" alt="Screenshot 5"/>
 </p>
-
-> Aplicación móvil profesional para la gestión integral de cobros, diseñada para cobradores y empresas que necesitan administrar pagos de manera eficiente.
-
----
 
 ## 📋 Tabla de Contenidos
 
